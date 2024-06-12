@@ -1,12 +1,22 @@
-function countClicks(){
-    console.log("Counting Start...");
-    var counts = localStorage.getItem('click-counts');//You can use
-    if (counts!==null){
-        var newClick = parseInt(counts) + 1;
-        localStorage.setItem('click-counts', newClick);
-    }
-    else{
-        localStorage.setItem('click-counts', "1");
-    }
-   document.getElementById("showCounts").innerHTML = counts;
- }
+/*------------// By Using JQuery //----
+
+$(function() {
+var i = 0;
+$('button').click(function() {
+i++;
+$("#count").val(i);
+// run ajax to save this value dynamically into database 
+});
+});
+--------------------------------*/
+
+// By using javascript 
+var i = 0;
+function countClick() {
+i++;
+//alert('here');
+document.getElementById("count").value = i ;
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<button onClick="countClick()">Click Me</button><br>
+Total Count<input type="text" id="count" disabled >
