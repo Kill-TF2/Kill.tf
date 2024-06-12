@@ -1,1 +1,27 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var count;
+        var button = document.getElementById("counter");
+        var display = document.getElementById("displayCount");
+         if( window.localStorage.getItem('clickCount')){
+           count =  window.localStorage.getItem('clickCount');
+         }else{
+            count = 0;
+          }
+         display.innerHTML = count;
+        button.onclick = function(){
+          Test()
+          count++;
+           window.localStorage.setItem('clickCount',count);
+          display.innerHTML = count;
+        }
+      </script>
+</body>
+</html>
